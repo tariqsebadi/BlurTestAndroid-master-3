@@ -1,0 +1,28 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.0'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+apply from: "$rootDir/gradle/common-build.gradle"
+
+ext {
+    compileSdkVersion = 25
+    minSdkVersion = 14
+    buildToolsVersion = "25.0.2"
+    targetSdkVersion = 24
+
+    versionName = "2.4.2"
+    apply plugin: 'announce'
+    versionCode = getCiBuildNumber() + 22
+
+}
